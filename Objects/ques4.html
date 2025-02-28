@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Population Records</title>
+</head>
+<body>
+  <h1>Enter Population Record</h1>
+
+  <form id="personForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required><br><br>
+
+    <label for="gender">Gender:</label><br>
+    <input type="radio" id="male" name="gender" value="Male"> Male
+    <input type="radio" id="female" name="gender" value="Female"> Female
+    <br><br>
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" required><br><br>
+
+    <label for="education">Education:</label>
+    <select id="education" required>
+      <option value="High School">High School</option>
+      <option value="Bachelor's Degree">Bachelor's Degree</option>
+      <option value="Master's Degree">Master's Degree</option>
+      <option value="PhD">PhD</option>
+    </select><br><br>
+
+    <label for="profession">Profession:</label>
+    <select id="profession" required>
+      <option value="Engineer">Engineer</option>
+      <option value="Teacher">Teacher</option>
+      <option value="Designer">Designer</option>
+      <option value="Doctor">Doctor</option>
+      <option value="Artist">Artist</option>
+    </select><br><br>
+
+    <button type="submit">Save Record</button>
+  </form>
+
+  <h2>Saved Records</h2>
+  <ul id="recordList"></ul>
+
+  <script src="ques4.js"></script>
+</body>
+</html>

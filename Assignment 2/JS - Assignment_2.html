@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation App</title>
+    <script>
+        const userPassword = "muhammad_shaheer_12345"
+        const newPassword = prompt("Enter Password: ")
+        while (newPassword === null || newPassword.trim() === "") {
+            newPassword = prompt("Empty Password! \nEnter again Password again: ")
+        }
+        if (userPassword == newPassword) {
+            alert("The Password you entered matches the original, Congratulations!")
+        }
+        else {
+            alert("Invalid Password!")
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

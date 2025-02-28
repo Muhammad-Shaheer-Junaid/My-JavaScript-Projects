@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount App</title>
+    <style>
+        table {
+            width: 100%;
+            border: 1px solid black;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        @media (max-width: 600px) {
+            table, th, td {
+                display: block;
+                width: 100%;
+            }
+            th, td {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Customer details
+        var customerName = prompt("Enter the customer's name:");
+
+        // Item inputs with predefined prices
+        var Rice = +prompt("Enter the quantity of Rice (1kg, Rs. 950 each):");
+        var Wheat = +prompt("Enter the quantity of Wheat Flour (1kg, Rs. 105 each):");
+        var Sugar = +prompt("Enter the quantity of Sugar (1kg, Rs. 290 each):");
+        var Milk = +prompt("Enter the quantity of Milk (1L, Rs. 230 each):");
+        var Eggs = +prompt("Enter the quantity of Eggs (1 Dozen, Rs. 350 each):");
+        var Cooking = +prompt("Enter the quantity of Cooking Oil (1L, Rs. 650 each):");
+        var Tea = +prompt("Enter the quantity of Tea (250g, Rs. 700 each):");
+        var Salt = +prompt("Enter the quantity of Salt (1kg, Rs. 500 each):");
+        var Daal = +prompt("Enter the quantity of Daal (1kg, Rs. 120 each):");
+        var Biscuits = +prompt("Enter the quantity of Biscuits (Pack, Rs. 1000 each):") ;
+
+        // Calculate total amount
+        var totalAmount = Rice + Wheat + Sugar + Milk + Eggs + Cooking + Tea + Salt + Daal + Biscuits;
+
+        // Calculate discount
+        var discount = 0;
+        if (totalAmount > 4000) {
+            discount = 10;
+        } else if (totalAmount > 3500) {
+            discount = 7;
+        } else if (totalAmount > 3000) {
+            discount = 5;
+        } else if (totalAmount > 2500) {
+            discount = 3;
+        }
+
+        var discountAmount = (totalAmount * discount) / 100;
+        var finalAmount = totalAmount - discountAmount;
+
+        // Display table
+        document.write(`<h1 align='center'>Customer Shopping Details</h1>`);
+        document.write(`<table>
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Items</th>
+                    <th>Total Amount</th>
+                    <th>Discount (%)</th>
+                    <th>Discount Amount</th>
+                    <th>Final Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>${customerName}</td>
+                    <td>
+                        <ul>
+                            ${Rice ? `<li>Rice - Rs. ${Rice.toFixed(2)}</li>` : ""}
+                            ${Wheat ? `<li>Wheat Flour - Rs. ${Wheat.toFixed(2)}</li>` : ""}
+                            ${Sugar ? `<li>Sugar - Rs. ${Sugar.toFixed(2)}</li>` : ""}
+                            ${Milk ? `<li>Milk - Rs. ${Milk.toFixed(2)}</li>` : ""}
+                            ${Eggs ? `<li>Eggs - Rs. ${Eggs.toFixed(2)}</li>` : ""}
+                            ${Cooking ? `<li>Cooking Oil - Rs. ${Cooking.toFixed(2)}</li>` : ""}
+                            ${Tea ? `<li>Tea - Rs. ${Tea.toFixed(2)}</li>` : ""}
+                            ${Salt ? `<li>Salt - Rs. ${Salt.toFixed(2)}</li>` : ""}
+                            ${Daal ? `<li>Daal - Rs. ${Daal.toFixed(2)}</li>` : ""}
+                            ${Biscuits ? `<li>Biscuits - Rs. ${Biscuits.toFixed(2)}</li>` : ""}
+                        </ul>
+                    </td>
+                    <td>Rs. ${totalAmount.toFixed(2)}</td>
+                    <td>${discount}%</td>
+                    <td>Rs. ${discountAmount.toFixed(2)}</td>
+                    <td>Rs. ${finalAmount.toFixed(2)}</td>
+                </tr>
+            </tbody>
+        </table>`);
+        document.write(`<h1 align='center'>Thanks For Shopping, <i>${customerName}</h1>`)
+    </script>
+</body>
+</html>
